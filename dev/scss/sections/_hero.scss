@@ -6,44 +6,77 @@
 
 #hero{
     background-color: var(--LilyWhite);
-
-    section{
-
-        article{
-            h1{
-                color: var(--NightBlue);
-            
-            }
-
-            p{
-                color: var(--Grey);
-            }
-
-            // LOVE HATE //
-            a:link, a:visited{
-                background-color: var(--NightBlue);
-                color: var(--white);
-            }
-            a:hover, a:focus{
+    padding: 56px 24px;
 
 
-            }
-            button{
-                background-color: var(--white);
-                border: none;
-            }
+    #hero-content-container{
+
+        @include helpers.md{
+            display: grid;
+            grid-template-areas: "hero-img"
+                                 "hero-content";
+            //grid-template-columns: 50% auto;
+        }
+    
+        @include helpers.xl{
+            grid-template-columns: 40% auto;
+            grid-template-areas: "hero-content hero-img";
+    
+            max-width: 1200px;
+            margin: 0 auto;
+    
         }
 
-        #hero-card{
-            background-color: var(--Snowdrop);
-
-            h5{
-                color: var(--NightBlue);
+        section{
+            @include helpers.md{
+            grid-area: hero-content;
+            padding: 0 15vw
+            }
+    
+            @include helpers.xl{
+                padding: 0;
+            }
+    
+            article{
+                h1{
+                    color: var(--NightBlue);
+                
+                }
+    
+                p{
+                    color: var(--Grey);
+                }
+    
+                // LOVE HATE //
+                a:link, a:visited{
+                    background-color: var(--NightBlue);
+                    color: var(--white);
+                }
+                a:hover, a:focus{
+    
+    
+                }
+                button{
+                    background-color: var(--white);
+                    border: none;
+                }
+            }
+    
+            #hero-card{
+                background-color: var(--Snowdrop);
+    
+                h5{
+                    color: var(--NightBlue);
+                }
             }
         }
-    }
-
-    aside{
+    
+        aside{
+            @include helpers.md{
+                grid-area: hero-img;
+            }
+    
+        }
 
     }
 
