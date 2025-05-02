@@ -17,6 +17,7 @@
                                  "hero-content";
             //grid-template-columns: 50% auto;
         }
+
     
         @include helpers.xl{
             grid-template-columns: 40% auto;
@@ -31,6 +32,10 @@
             @include helpers.md{
             grid-area: hero-content;
             padding: 0 15vw
+            }
+
+            @include helpers.lg{
+                padding: 0 30vw;
             }
     
             @include helpers.xl{
