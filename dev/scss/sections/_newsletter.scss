@@ -5,24 +5,44 @@
 @use "../helpers";
 
 #newsletter{
-    padding: 40px 24px;
+
+    margin-bottom: 100px;
 
     #newsletter-content{
         background-color: var(--LilyWhite);
         padding: 60px 16px;
 
         @include helpers.md{
-            padding:60
+            padding: 60px 20vw;
         }
 
-}
+        @include helpers.lg{
+            display: grid;
+            grid-template-columns: 65% auto;
+            padding: 0px 0px;
+            gap: 74px;
+
+        }
+
+        @include helpers.xl{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #newsletter-left{
+
+            @include helpers.lg{
+                padding: 60px 0px 60px 60px;
+
+            }
+        
+
 
     p{
-        color:var(--Grey);
-        font-weight: 600;
-        line-height: helpers.rem-calc(28);
+
         margin: 16px 0;
     }
+}
 
     form{
         input{
@@ -41,10 +61,12 @@
         opacity: 1; /* Firefox */
 
         }
+    
 
         :-ms-input-placeholder { /* Internet Explorer 10-11 */
             color: var(--Grey);
     }
+
     h1{
         color: var(--NightBlue);
 
@@ -58,9 +80,21 @@
 
         }
     }
+}
+
 
     aside {
         display: none;
+
+        @include helpers.lg{
+            display: block;
+            // border: 1px solid red;
+            margin-top: -50px;
+        }
+
+        img{
+            object-fit: fill;
+            }
+        }
     }
-}
-}
+ }
